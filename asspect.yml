@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/lolmatch/build/
+permissions:
+  - object: /
+    pattern: "**"
+    owner: lolmatch
+    group: lolmatch
+    mode : 700
+hooks:
+  AfterInstall:
+    - location: ./scripts/start.sh
+      timeout: 60
+      runas: lolmatch

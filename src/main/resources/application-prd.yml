@@ -17,4 +17,4 @@ spring:
     serialization:
       fail-on-empty-beans: false
   profiles:
-    active: local
+    active: prd
