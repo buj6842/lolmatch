@@ -2,6 +2,7 @@ package com.lolmatch.entity
 
 import jakarta.persistence.*
 
+
 @Entity
 @Table(name = "USER")
 class User: BaseEntity() {
@@ -35,5 +36,13 @@ class User: BaseEntity() {
     @OneToOne
     @JoinColumn(name = "account_info_id")
     var accountInfo: AccountInfo? = null
+
+    @OneToOne
+    @JoinTable(
+        name = "tbl_user_role",
+        joinColumns = [JoinColumn(name = "USER_ID")],
+        inverseJoinColumns = [JoinColumn(name = "ROLE_ID")]
+    )
+    val role: Role? = null
 
 }
