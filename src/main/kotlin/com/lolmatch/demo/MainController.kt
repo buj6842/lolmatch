@@ -1,5 +1,6 @@
 package com.lolmatch.demo
 
+import com.lolmatch.entity.User
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set
@@ -11,8 +12,8 @@ class MainController {
     @GetMapping("/")
     fun mainView(model : Model): String {
         return buildString {
-        append("/first/main")
-    }
+            append("/first/main")
+        }
 
     }
 }
