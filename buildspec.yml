@@ -45,4 +45,4 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - target/lolmatch-1.0.jar
+    - apps/lolmatch/lolmatch-1.0.jar
