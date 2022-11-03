@@ -1,4 +1,0 @@
-package com.lolmatch.entity.type
-
-enum class asdf {
-}

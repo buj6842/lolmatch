@@ -1,5 +1,6 @@
 package com.lolmatch.entity
 
+import com.lolmatch.entity.type.UserRoleType
 import jakarta.persistence.*
 
 
@@ -8,9 +9,9 @@ import jakarta.persistence.*
 class User: BaseEntity() {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "user_seq")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0L
+    val userSeq: Long = 0L
 
     @Column(name = "user_id")
     var userId: String = ""
@@ -37,12 +38,6 @@ class User: BaseEntity() {
     @JoinColumn(name = "account_info_id")
     var accountInfo: AccountInfo? = null
 
-    @OneToOne
-    @JoinTable(
-        name = "tbl_user_role",
-        joinColumns = [JoinColumn(name = "USER_ID")],
-        inverseJoinColumns = [JoinColumn(name = "ROLE_ID")]
-    )
-    val role: Role? = null
-
+    @Enumerated(EnumType.STRING)
+    var userType: UserRoleType = UserRoleType.USER
 }
