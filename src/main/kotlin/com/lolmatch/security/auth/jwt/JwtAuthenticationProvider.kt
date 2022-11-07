@@ -1,6 +1,6 @@
 package com.lolmatch.security.auth.jwt
 
-import com.lolmatch.security.service.CustomUserDetailService
+//import com.lolmatch.security.service.CustomUserDetailService
 import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
@@ -23,7 +23,7 @@ class JwtAuthenticationProvider(
     @Value("\${jwt.refreshExpireTime}")
     private val REFRESH_EXPIRE_TIME : Long,
 
-    private val userDetailService: CustomUserDetailService
+//    private val userDetailService: CustomUserDetailService
 ) {
     private val accessTokenHeader: String = "X-AUTH-TOKEN-ACCESS"
 
@@ -71,10 +71,11 @@ class JwtAuthenticationProvider(
     }
 
     // userName으로 Authentication 객체 생성
-    fun getAuthentication(username: String): Authentication {
-        val userDetails: UserDetails = userDetailService.loadUserByUsername(username)
+    fun getAuthentication(username: String): Authentication? {
+//        val userDetails: UserDetails = userDetailService.loadUserByUsername(username)
 
-        return UsernamePasswordAuthenticationToken(userDetails, null, userDetails.authorities)
+//        return UsernamePasswordAuthenticationToken(userDetails, null, userDetails.authorities)
+        return null
     }
 
     fun getUserPk(token: String): String {
