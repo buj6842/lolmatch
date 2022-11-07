@@ -18,3 +18,8 @@ spring:
       fail-on-empty-beans: false
   profiles:
     active: local
+
+jwt:
+  secretKey: "aaaaaaaaaaaaaaaaa"
+  accessExpireTime: 1440
+  refreshExpireTime: 1440
