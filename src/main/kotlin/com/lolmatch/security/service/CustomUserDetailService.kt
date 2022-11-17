@@ -1,8 +1,8 @@
 //package com.lolmatch.security.service
 //
-//import com.lolmatch.entity.User
+//import com.lolmatch.user.domain.User
 //import com.lolmatch.security.entity.CustomUserDetails
-//import com.lolmatch.repository.UserRepository
+//import com.lolmatch.user.repository.UserRepository
 //import org.springframework.security.core.userdetails.UserDetails
 //import org.springframework.security.core.userdetails.UserDetailsService
 //import org.springframework.security.core.userdetails.UsernameNotFoundException

@@ -1,6 +1,6 @@
 package com.lolmatch.entity
 
-import jakarta.persistence.*
+import javax.persistence.*
 
 @Entity
 @Table(name = "ACCOUNT_INFO")

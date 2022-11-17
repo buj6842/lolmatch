@@ -1,14 +1,17 @@
 package com.lolmatch.security.auth.jwt
 
 //import com.lolmatch.security.service.CustomUserDetailService
+import com.lolmatch.util.constant.AuthTokenAccess
+import com.lolmatch.util.constant.AuthTokenRefresh
+import com.lolmatch.util.constant.UserName
 import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
-import jakarta.servlet.http.HttpServletRequest
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.security.core.Authentication
 import org.springframework.stereotype.Component
 import java.util.*
+import javax.servlet.http.HttpServletRequest
 
 @Component
 class JwtAuthenticationProvider(
@@ -23,14 +26,14 @@ class JwtAuthenticationProvider(
 
 //    private val userDetailService: CustomUserDetailService
 ) {
-    private val accessTokenHeader: String = "X-AUTH-TOKEN-ACCESS"
+    private val accessTokenHeader: String = AuthTokenAccess
 
-    private val refreshTokenHeader: String = "X-AUTH-TOKEN-REFRESH"
+    private val refreshTokenHeader: String = AuthTokenRefresh
 
     // 토큰 생성
     fun createToken(username: String): String {
         val claims: Claims = Jwts.claims().setSubject(username);
-        claims["username"] = username
+        claims[UserName] = username
 
         val now = Date()
         return Jwts.builder()
@@ -65,7 +68,7 @@ class JwtAuthenticationProvider(
     // 토큰에서 userName 파싱
     fun getUserName(token: String): String {
         val claims: Claims = getAllClaims(token)
-        return claims["username"] as String
+        return claims[UserName] as String
     }
 
     // userName으로 Authentication 객체 생성
