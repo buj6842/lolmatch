@@ -1,6 +1,6 @@
 package com.lolmatch.security.auth.jwt
 
-//import com.lolmatch.security.service.CustomUserDetailService
+import com.lolmatch.security.service.CustomUserDetailService
 import com.lolmatch.util.constant.AuthTokenAccess
 import com.lolmatch.util.constant.AuthTokenRefresh
 import com.lolmatch.util.constant.UserName
@@ -8,23 +8,28 @@ import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.Authentication
+import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Component
 import java.util.*
 import javax.servlet.http.HttpServletRequest
 
 @Component
 class JwtAuthenticationProvider(
+    /* 비밀 키 */
     @Value("\${jwt.secretKey}")
     private val SECRET_KEY : String,
 
+    /* 토큰 유효 시간 */
     @Value("\${jwt.accessExpireTime}")
     private val ACCESS_EXPIRE_TIME : Long,
 
+    /* 토큰 갱신 시간 */
     @Value("\${jwt.refreshExpireTime}")
     private val REFRESH_EXPIRE_TIME : Long,
 
-//    private val userDetailService: CustomUserDetailService
+    private val userDetailService: CustomUserDetailService
 ) {
     private val accessTokenHeader: String = AuthTokenAccess
 
@@ -47,7 +52,7 @@ class JwtAuthenticationProvider(
     // 토큰 새로고침
     fun refreshToken(username: String): String {
         val claims: Claims = Jwts.claims().setSubject(username);
-        claims["username"] = username
+        claims[UserName] = username
 
         val now = Date()
         return Jwts.builder()
@@ -71,12 +76,10 @@ class JwtAuthenticationProvider(
         return claims[UserName] as String
     }
 
-    // userName으로 Authentication 객체 생성
+    // userName 으로 Authentication 객체 생성
     fun getAuthentication(username: String): Authentication? {
-//        val userDetails: UserDetails = userDetailService.loadUserByUsername(username)
-
-//        return UsernamePasswordAuthenticationToken(userDetails, null, userDetails.authorities)
-        return null
+        val userDetails: UserDetails = userDetailService.loadUserByUsername(username)
+        return UsernamePasswordAuthenticationToken(userDetails, null, userDetails.authorities)
     }
 
     fun getUserPk(token: String): String {
