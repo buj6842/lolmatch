@@ -23,3 +23,6 @@ jwt:
   secretKey: "aaaaaaaaaaaaaaaaa"
   accessExpireTime: 1440
   refreshExpireTime: 1440
+
+riot:
+  url: "https://kr.api.riotgames.com/"
