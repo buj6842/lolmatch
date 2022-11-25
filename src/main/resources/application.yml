@@ -26,3 +26,4 @@ jwt:
 
 riot:
   url: "https://kr.api.riotgames.com/"
+  key: "RGAPI-ed21a571-16c2-4d1a-b1b8-d36889994f48"
