@@ -1,11 +1,11 @@
 package com.lolmatch.security.entity
 
+import com.lolmatch.user.domain.User
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
 class CustomUserDetails internal constructor(
-    private val userName: String,
-    private val password: String
+    private var uesr: User
 ): UserDetails {
     override fun getAuthorities(): MutableCollection<out GrantedAuthority>? {
         return null
