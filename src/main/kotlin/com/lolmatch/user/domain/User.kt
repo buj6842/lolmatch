@@ -4,8 +4,10 @@ import com.lolmatch.entity.AccountInfo
 import com.lolmatch.entity.BaseEntity
 import com.lolmatch.entity.type.PositionEnum
 import com.lolmatch.user.enums.UserRoleType
+import org.hibernate.annotations.DynamicUpdate
 import javax.persistence.*
 
+@DynamicUpdate
 @Entity
 @Table(name = "tbl_user")
 class User (
@@ -20,7 +22,9 @@ class User (
     @Column
     var preferPosition1: PositionEnum? = null,
     @Column
-    var preferPosition2: PositionEnum? = null
+    var preferPosition2: PositionEnum? = null,
+
+    var accountId : String? = null ,
 ) : BaseEntity() {
     @Id
     @Column(name = "user_seq")
@@ -36,4 +40,6 @@ class User (
 
     @Enumerated(EnumType.STRING)
     var userType: UserRoleType = UserRoleType.USER
+
+    var refreshToken: String? = null
 }

@@ -9,6 +9,6 @@ import java.util.*
 @Component
 interface UserRepository: JpaRepository<User, Long> , UserCustomRepository {
     @Transactional
-    fun findByUserId(userId: String): Optional<User>
+    fun findByUserId(userId: String?): Optional<User>
 
 }

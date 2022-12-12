@@ -9,7 +9,7 @@ import javax.servlet.ServletRequest
 import javax.servlet.ServletResponse
 
 class JwtAuthenticationFilter(
-    private val jwtAuthenticationProvider: JwtAuthenticationProvider
+    private val jwtAuthenticationProvider: JwtProvider
 ): GenericFilterBean() {
     override fun doFilter(request: ServletRequest?, response: ServletResponse?, chain: FilterChain?) {
         val req = request as HttpServletRequest
