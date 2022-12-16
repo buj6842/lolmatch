@@ -20,7 +20,7 @@ spring:
     active: local
 
 jwt:
-  secretKey: "aaaaaaaaaaaaaaaaa"
+  secretKey: lolMatchSecretKeyasdfasdfsadfwerasdqwesadfasdfsadfcxzvaasdf
   accessExpireTime: 1440
   refreshExpireTime: 1440
 

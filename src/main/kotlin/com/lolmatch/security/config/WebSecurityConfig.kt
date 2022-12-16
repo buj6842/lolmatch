@@ -1,22 +1,31 @@
 package com.lolmatch.security.config
 
-import com.lolmatch.security.auth.jwt.JwtAuthenticationProvider
+import com.lolmatch.security.auth.jwt.JwtProvider
 import org.springframework.context.annotation.Configuration
+import org.springframework.http.HttpMethod
+import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+import org.springframework.security.config.http.SessionCreationPolicy
 
 
 @Configuration
 @EnableWebSecurity
-class WebSecurityConfig(private val jwtAuthenticationProvider: JwtAuthenticationProvider) {
+class WebSecurityConfig(private val jwtAuthenticationProvider: JwtProvider) :
+    WebSecurityConfigurerAdapter()
+{
+    companion object {
+    }
 
-//    @Bean
-//    @Throws(Exception::class)
-//    fun filterChain(http: HttpSecurity, jwt: OAuth2ResourceServerProperties.Jwt, tokenService: TokenService): SecurityFilterChain? {
-//        return http.csrf().disable()
-//            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//            .and()
-//            .authorizeRequests()
-//            .antMatchers("").hasAuthority(Role.name())
-//            .addFilterBefore(JwtAuthenticationFilter(jwtAuthenticationProvider), UsernamePasswordAuthenticationFilter::class.java)
-//    }
+    @Throws(Exception::class)
+    override fun configure(http: HttpSecurity) {
+        http.cors().disable()
+            .csrf().disable()
+            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+            .authorizeRequests()
+            .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+            .and()
+            .formLogin().disable()
+
+    }
 }
