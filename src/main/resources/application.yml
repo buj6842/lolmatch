@@ -23,3 +23,6 @@ jwt:
   secretKey: lolMatchSecretKeyasdfasdfsadfwerasdqwesadfasdfsadfcxzvaasdf
   accessExpireTime: 1440
   refreshExpireTime: 1440
+
+server:
+  port: 8081
