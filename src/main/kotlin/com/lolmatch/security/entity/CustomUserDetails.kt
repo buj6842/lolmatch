@@ -5,7 +5,8 @@ import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
 class CustomUserDetails internal constructor(
-    private var uesr: User
+    private val userName: String,
+    private val password: String
 ): UserDetails {
     override fun getAuthorities(): MutableCollection<out GrantedAuthority>? {
         return null

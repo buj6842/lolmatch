@@ -1,6 +1,6 @@
 package com.lolmatch.security.config
 
-import com.lolmatch.security.auth.jwt.JwtAuthenticationProvider
+import com.lolmatch.security.auth.jwt.JwtProvider
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpMethod
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
@@ -11,7 +11,7 @@ import org.springframework.security.config.http.SessionCreationPolicy
 
 @Configuration
 @EnableWebSecurity
-class WebSecurityConfig(private val jwtAuthenticationProvider: JwtAuthenticationProvider) :
+class WebSecurityConfig(private val jwtAuthenticationProvider: JwtProvider) :
     WebSecurityConfigurerAdapter()
 {
     companion object {

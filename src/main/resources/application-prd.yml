@@ -18,3 +18,11 @@ spring:
       fail-on-empty-beans: false
   profiles:
     active: prd
+
+jwt:
+  secretKey: "aaaaaaaaaaaaaaaaa"
+  accessExpireTime: 1440
+  refreshExpireTime: 1440
+
+server:
+  port: 8081
