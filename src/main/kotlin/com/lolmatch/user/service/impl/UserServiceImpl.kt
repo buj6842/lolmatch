@@ -22,8 +22,7 @@ import kotlin.jvm.Throws
 class UserServiceImpl (
     private val userRepository: UserRepository,
     private val jwtProvider: JwtProvider
-        ) : UserService {
-
+    ) : UserService {
 
     @Transactional
     override fun createUser(userCreateDTO: UserCreateDTO) {
@@ -49,7 +48,6 @@ class UserServiceImpl (
         val accessToken = jwtProvider.createToken(accessData)
         SecurityContextHolder.getContext().authentication = jwtProvider.getAuthentication(userEntity.userId)
         return accessToken
-
     }
 
     @Throws(ServiceException::class)
@@ -65,5 +63,4 @@ class UserServiceImpl (
 
     override fun duplicateCheck(userId: String): Boolean =
         userRepository.findByUserId(userId).isPresent
-
 }

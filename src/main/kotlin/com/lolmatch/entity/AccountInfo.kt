@@ -3,7 +3,7 @@ package com.lolmatch.entity
 import javax.persistence.*
 
 @Entity
-@Table(name = "TBL_ACCOUNT_INFO")
+@Table(name = "tbl_accountInfo")
 class AccountInfo: BaseEntity() {
     @Id
     @Column
@@ -29,9 +29,6 @@ class AccountInfo: BaseEntity() {
 
     @Column
     var tier: String = ""
-
-    @Column
-    var rank: String = ""
 
     @Column
     var leaguePoints: Int = 0
