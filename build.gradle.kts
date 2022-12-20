@@ -34,6 +34,10 @@ dependencies {
     implementation("com.querydsl:querydsl-root:5.0.0")
     implementation("com.querydsl:querydsl-jpa:5.0.0")
     implementation("javax.persistence:javax.persistence-api:2.2")
+    implementation("com.google.guava:guava:31.1-jre")
+    implementation("com.google.code.gson:gson:2.10")
+    implementation("org.apache.httpcomponents:httpclient:4.5.14")
+    implementation("org.apache.httpcomponents:httpcore:4.4.15")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
 
