@@ -46,6 +46,10 @@ dependencies {
     kapt("com.querydsl:querydsl-apt:5.0.0:jpa")
     kapt("org.springframework.boot:spring-boot-configuration-processor")
 
+    // Web Client
+    implementation("org.apache.httpcomponents:httpclient:4.5.13")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("org.projectreactor:reactor-spring:1.0.1.RELEASE")
 
     sourceSets.main {
         withConvention(org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet::class) {

@@ -3,22 +3,39 @@ package com.lolmatch.entity
 import javax.persistence.*
 
 @Entity
-@Table(name = "ACCOUNT_INFO")
+@Table(name = "tbl_accountInfo")
 class AccountInfo: BaseEntity() {
     @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0L
+    @Column
+    var id: String = ""
 
-    @Column(name = "riot_user_key")
-    var riotUserKey: String = ""
+    @Column
+    var accountId: String = ""
 
-    @Column(name = "nickName")
-    var nickName: String = ""
+    @Column
+    var profileIconId: Int = 0
 
-    @Column(name = "tier")
+    @Column
+    var puuid: String = ""
+
+    @Column
+    var name: String = ""
+
+    @Column
+    var revisionDate: Long = 0L
+
+    @Column
+    var level: Int = 0
+
+    @Column
     var tier: String = ""
 
-    @Column(name = "level")
-    var level: Int = 0
+    @Column
+    var leaguePoints: Int = 0
+
+    @Column
+    var wins: Int = 0
+
+    @Column
+    var losses: Int = 0
 }
