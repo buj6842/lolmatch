@@ -33,5 +33,5 @@ class Member : BaseEntity() {
         joinColumns = [JoinColumn(name = "member_seq")],
         inverseJoinColumns = [JoinColumn(name = "mrole_seq")]
     )
-    val mRoles: List<Mrole>? = mutableListOf()
+    val mRoles: Set<Mrole>? = mutableSetOf()
 }
