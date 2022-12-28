@@ -8,12 +8,12 @@ import javax.persistence.*
 @Entity
 @Table(name = "tbl_team")
 class Team(
-    @Column
+    @Column(name = "team_name")
     var teamName: String = ""
 ) : BaseEntity() {
 
     @Id
-    @Column
+    @Column(name = "team_seq")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var teamSeq: Long = 0L
 

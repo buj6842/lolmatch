@@ -10,11 +10,11 @@ import javax.persistence.*
 @Table(name = "tbl_mrole")
 class Mrole : BaseEntity() {
     @Id
-    @Column
+    @Column(name = "m_role_seq")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var mRoleSeq: Long = 0L
 
-    @Column
+    @Column(name = "role_type")
     @Enumerated(EnumType.STRING)
     var roleType: MemberRoleType = MemberRoleType.MEMBER
 }
