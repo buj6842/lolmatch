@@ -5,37 +5,32 @@ import javax.persistence.*
 @Entity
 @Table(name = "tbl_accountInfo")
 class AccountInfo: BaseEntity() {
-    @Id
-    @Column
-    var id: String = ""
+    @Id @GeneratedValue
+    @Column(name = "id")
+    val id: Long = 0L
+
+    @Column(name = "riot_user_key")
+    var riotUserKey: String = ""
 
     @Column
-    var accountId: String = ""
+    var encryptAccountId: String = ""
 
     @Column
     var profileIconId: Int = 0
 
     @Column
-    var puuid: String = ""
-
-    @Column
-    var name: String = ""
-
-    @Column
     var revisionDate: Long = 0L
 
     @Column
-    var level: Int = 0
+    var nickName: String = ""
 
     @Column
-    var tier: String = ""
+    var puuid: String = ""
 
     @Column
-    var leaguePoints: Int = 0
+    var summonerLevel: Long = 0L
 
-    @Column
-    var wins: Int = 0
-
-    @Column
-    var losses: Int = 0
+    @OneToOne
+    @JoinColumn(name = "league_info_id")
+    var leagueInfo: LeagueInfo? = null
 }
