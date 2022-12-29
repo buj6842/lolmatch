@@ -11,4 +11,7 @@ interface UserRepository: JpaRepository<User, Long> , UserCustomRepository {
     @Transactional
     fun findByUserId(userId: String?): Optional<User>
 
+    @Transactional
+    fun findByUserSeq(userSeq: Long): User
+
 }
