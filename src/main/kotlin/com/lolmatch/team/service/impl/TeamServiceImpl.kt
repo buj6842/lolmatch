@@ -1,6 +1,9 @@
 package com.lolmatch.team.service.impl
 
+import com.lolmatch.team.domain.Member
+import com.lolmatch.team.dto.MemberDetailDTO
 import com.lolmatch.team.dto.TeamCreateDTO
+import com.lolmatch.team.dto.TeamDetailDTO
 import com.lolmatch.team.dto.TeamUpdateDTO
 import com.lolmatch.team.repository.MemberRepository
 import com.lolmatch.team.repository.MroleRepository
@@ -35,9 +38,25 @@ class TeamServiceImpl(
         }
     }
 
+    /**
+     * 팀 수정 (팀명만 수정)
+     */
     @Transactional
     override fun updateTeam(teamUpdateDTO: TeamUpdateDTO) {
         val team = teamUpdateDTO.teamSeq?.let { teamRepository.findById(it).orElseThrow() }!!
         team.update(teamUpdateDTO)
+    }
+
+    /**
+     * 팀 단일 조회
+     */
+    @Transactional
+    override fun detailTeam(teamSeq: Long): TeamDetailDTO {
+        val team = teamSeq?.let { teamRepository.findById(it).orElseThrow() }!!
+        return TeamDetailDTO(
+            team.teamSeq,
+            team.teamName,
+            team?.memberList?.map { mb: Member -> MemberDetailDTO(mb.mRoleType, mb.memberSeq) }
+        )
     }
 }
