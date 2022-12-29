@@ -1,11 +1,13 @@
 package com.lolmatch.common.property
 
-class RiotApiProperty (riotApiProperty: RiotApiProperty?) {
+import com.lolmatch.common.domain.RiotPropertyEntity
+
+class RiotApiProperty(riotApiProperty: RiotPropertyEntity) {
     val riotApiUrl: String?
     val apiKey: String?
 
     init {
-        riotApiUrl = riotApiProperty?.riotApiUrl
-        apiKey = riotApiProperty?.apiKey
+        riotApiUrl = riotApiProperty?.propertyValue1
+        apiKey = riotApiProperty?.propertyValue2
     }
 }

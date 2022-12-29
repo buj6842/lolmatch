@@ -1,5 +1,6 @@
 package com.lolmatch.user.controller
 
+import com.lolmatch.user.dto.RiotAuthRequest
 import com.lolmatch.user.dto.UserCreateDTO
 import com.lolmatch.user.service.UserService
 import org.springframework.stereotype.Controller
@@ -19,5 +20,13 @@ class UserController(
     @PostMapping("/user")
     fun createUser(@RequestBody createDTO: UserCreateDTO) {
         userService.createUser(createDTO)
+    }
+
+    /**
+     * riot api 인증
+     */
+    @PostMapping("/riotAuth")
+    fun checkRiotAuth(@RequestBody authRequest: RiotAuthRequest) {
+        userService.checkRiotAuth(authRequest)
     }
 }

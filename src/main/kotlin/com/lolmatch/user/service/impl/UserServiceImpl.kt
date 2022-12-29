@@ -1,8 +1,10 @@
 package com.lolmatch.user.service.impl
 
+import com.lolmatch.riot.engine.service.RiotApiService
 import com.lolmatch.security.auth.jwt.JwtProvider
 import com.lolmatch.user.domain.User
 import com.lolmatch.user.dto.LoginRequest
+import com.lolmatch.user.dto.RiotAuthRequest
 import com.lolmatch.user.dto.TokenData
 import com.lolmatch.user.dto.UserCreateDTO
 import com.lolmatch.user.repository.UserRepository
@@ -21,7 +23,8 @@ import kotlin.jvm.Throws
 @Service
 class UserServiceImpl (
     private val userRepository: UserRepository,
-    private val jwtProvider: JwtProvider
+    private val jwtProvider: JwtProvider,
+    private val riotApiService: RiotApiService
         ) : UserService {
 
 
@@ -65,5 +68,10 @@ class UserServiceImpl (
 
     override fun duplicateCheck(userId: String): Boolean =
         userRepository.findByUserId(userId).isPresent
+
+    override fun checkRiotAuth(riotAuthRequest: RiotAuthRequest): Boolean {
+        val riotResponse = riotAuthRequest.summonerName?.let { riotApiService.getRiotInfo(it) }
+        return riotResponse?.profileIconId == riotAuthRequest.profileIconId
+    }
 
 }

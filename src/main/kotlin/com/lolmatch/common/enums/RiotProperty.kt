@@ -1,5 +1,5 @@
 package com.lolmatch.common.enums
 
-enum class RiotPropeerty {
+enum class RiotProperty {
     RIOT_PROPERTY, LOL_VERSION
 }
