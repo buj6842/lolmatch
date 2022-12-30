@@ -10,4 +10,6 @@ interface TeamService {
     fun updateTeam(teamUpdateDTO: TeamUpdateDTO)
 
     fun detailTeam(teamSeq: Long): TeamDetailDTO
+
+    fun deleteTeam(teamSeq: Long)
 }

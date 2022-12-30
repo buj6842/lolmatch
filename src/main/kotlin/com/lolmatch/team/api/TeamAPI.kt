@@ -34,4 +34,12 @@ class TeamAPI(
     fun detailTeam(@PathVariable teamSeq: Long): TeamDetailDTO {
         return teamService.detailTeam(teamSeq)
     }
+
+    /**
+     * 팀 삭제
+     */
+    @DeleteMapping("/team/{teamSeq}")
+    fun deleteTeam(@PathVariable teamSeq: Long) {
+        return teamService.deleteTeam(teamSeq)
+    }
 }
