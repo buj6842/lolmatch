@@ -3,7 +3,6 @@ package com.lolmatch.team.domain
 import com.lolmatch.entity.BaseEntity
 import com.lolmatch.team.enums.MemberRoleType
 import com.lolmatch.user.domain.User
-import com.lolmatch.user.enums.UserRoleType
 import org.hibernate.annotations.DynamicUpdate
 import javax.persistence.*
 
@@ -15,11 +14,11 @@ class Member(
     @Enumerated(EnumType.STRING)
     var mRoleType: MemberRoleType = MemberRoleType.MEMBER,
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_seq")
     var team : Team? = null,
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_seq")
     var user: User? = null
 ) : BaseEntity() {

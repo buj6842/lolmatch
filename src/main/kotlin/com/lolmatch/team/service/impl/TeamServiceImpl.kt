@@ -1,10 +1,8 @@
 package com.lolmatch.team.service.impl
 
 import com.lolmatch.team.domain.Member
-import com.lolmatch.team.dto.MemberDetailDTO
-import com.lolmatch.team.dto.TeamCreateDTO
-import com.lolmatch.team.dto.TeamDetailDTO
-import com.lolmatch.team.dto.TeamUpdateDTO
+import com.lolmatch.team.domain.Mrole
+import com.lolmatch.team.dto.*
 import com.lolmatch.team.repository.MemberRepository
 import com.lolmatch.team.repository.MroleRepository
 import com.lolmatch.team.repository.TeamRepository
@@ -59,4 +57,14 @@ class TeamServiceImpl(
             team?.memberList?.map { mb: Member -> MemberDetailDTO(mb.mRoleType, mb.memberSeq) }
         )
     }
+
+    /**
+     * 팀 삭제
+     */
+    @Transactional
+    override fun deleteTeam(teamSeq: Long) {
+        val team = teamSeq?.let { teamRepository.findById(it).orElseThrow() }!!
+        team.delete()
+    }
+
 }

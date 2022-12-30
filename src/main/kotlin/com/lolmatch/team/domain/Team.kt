@@ -25,4 +25,7 @@ class Team(
         teamName = teamUpdateDTO.teamName
     }
 
+    fun delete () {
+        delYn = true
+    }
 }
