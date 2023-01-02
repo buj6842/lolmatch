@@ -1,4 +1,4 @@
-package com.lolmatch.entity
+package com.lolmatch.user.domain
 
 import org.hibernate.annotations.DynamicUpdate
 import javax.persistence.*

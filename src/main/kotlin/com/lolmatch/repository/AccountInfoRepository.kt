@@ -1,6 +1,6 @@
 package com.lolmatch.repository
 
-import com.lolmatch.entity.AccountInfo
+import com.lolmatch.user.domain.AccountInfo
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.querydsl.QuerydslPredicateExecutor
 
