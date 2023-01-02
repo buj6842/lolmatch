@@ -7,7 +7,6 @@ import javax.persistence.*
 @Table(name = "tbl_member")
 class Member {
     @Id @GeneratedValue
-    @Column
     var id: Long = 0L
 
     @ManyToOne(fetch = FetchType.LAZY)

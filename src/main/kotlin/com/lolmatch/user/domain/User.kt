@@ -30,7 +30,6 @@ class User (
     var preferPosition2: PositionEnum? = null
 ) : BaseEntity() {
     @Id
-    @Column(name = "user_seq")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val userSeq: Long = 0L
 
