@@ -1,10 +1,11 @@
-package com.lolmatch.roster.service
+package com.lolmatch.roster.service.impl
 
 import com.lolmatch.roster.domain.Roster
 import com.lolmatch.roster.dto.RosterCreateDTO
 import com.lolmatch.roster.dto.RosterDetailDTO
 import com.lolmatch.roster.dto.RosterUpdateDTO
 import com.lolmatch.roster.repository.RosterRepository
+import com.lolmatch.roster.service.RosterService
 import com.lolmatch.team.domain.Team
 import org.springframework.transaction.annotation.Transactional
 
@@ -18,7 +19,10 @@ class RosterServiceImpl(
     override fun createRoster(rosterCreateDTO: RosterCreateDTO) {
         rosterCreateDTO.teamSeq.let {
             val team: Team = teamRepository.findById(it).orElseThrow()
+
             val roster: Roster = rosterRepository.save(rosterCreateDTO.toEntity())
+            roster.team = team
+
             team.rosterList?.add(roster)
         }
     }
@@ -32,7 +36,7 @@ class RosterServiceImpl(
     }
 
     /* 로스터 상세 */
-    override fun detailRoster(rosterSeq: Long): RosterDetailDTO? {
+    override fun detailRoster(rosterSeq: Long): RosterDetailDTO {
         rosterSeq.let {
             val roster: Roster = rosterRepository.findById(it).orElseThrow()
             return RosterDetailDTO(

@@ -4,6 +4,7 @@ import com.lolmatch.entity.BaseEntity
 import com.lolmatch.roster.dto.RosterUpdateDTO
 import com.lolmatch.team.domain.Team
 import org.hibernate.annotations.DynamicUpdate
+import org.springframework.util.ObjectUtils
 import javax.persistence.*
 
 @DynamicUpdate
@@ -41,13 +42,13 @@ class Roster(
     var team: Team? = null
 
     fun update (rosterUpdateDTO: RosterUpdateDTO) {
-        if(rosterUpdateDTO.rosterName != null) rosterName = rosterUpdateDTO.rosterName
-        if(rosterUpdateDTO.top != null)        top = rosterUpdateDTO.top
-        if(rosterUpdateDTO.jungle != null)     jungle = rosterUpdateDTO.jungle
-        if(rosterUpdateDTO.mid != null)        mid = rosterUpdateDTO.mid
-        if(rosterUpdateDTO.ad != null)         ad = rosterUpdateDTO.ad
-        if(rosterUpdateDTO.support != null)    support = rosterUpdateDTO.support
-        if(rosterUpdateDTO.spare != null)      spare = rosterUpdateDTO.spare
+        if(ObjectUtils.isEmpty(rosterUpdateDTO.rosterName)) rosterName = rosterUpdateDTO.rosterName
+        if(ObjectUtils.isEmpty(rosterUpdateDTO.top))        top = rosterUpdateDTO.top
+        if(ObjectUtils.isEmpty(rosterUpdateDTO.jungle))     jungle = rosterUpdateDTO.jungle
+        if(ObjectUtils.isEmpty(rosterUpdateDTO.mid))        mid = rosterUpdateDTO.mid
+        if(ObjectUtils.isEmpty(rosterUpdateDTO.ad))         ad = rosterUpdateDTO.ad
+        if(ObjectUtils.isEmpty(rosterUpdateDTO.support))    support = rosterUpdateDTO.support
+        if(ObjectUtils.isEmpty(rosterUpdateDTO.spare))      spare = rosterUpdateDTO.spare
     }
 
     fun delete() {
