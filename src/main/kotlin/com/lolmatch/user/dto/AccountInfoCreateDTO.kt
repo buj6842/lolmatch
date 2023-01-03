@@ -1,10 +1,7 @@
 package com.lolmatch.user.dto
 
-import com.lolmatch.entity.type.PositionEnum
 import com.lolmatch.user.domain.AccountInfo
 import com.lolmatch.user.domain.LeagueInfo
-import com.lolmatch.user.domain.User
-import org.springframework.security.crypto.bcrypt.BCrypt
 
 data class AccountInfoCreateDTO(
     var riotUserKey: String? = null,

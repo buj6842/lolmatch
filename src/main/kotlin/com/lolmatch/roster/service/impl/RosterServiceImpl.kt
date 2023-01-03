@@ -7,8 +7,10 @@ import com.lolmatch.roster.dto.RosterUpdateDTO
 import com.lolmatch.roster.repository.RosterRepository
 import com.lolmatch.roster.service.RosterService
 import com.lolmatch.team.domain.Team
+import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
+@Service
 class RosterServiceImpl(
     private val rosterRepository: RosterRepository,
     private val teamRepository: RosterRepository
@@ -24,6 +26,8 @@ class RosterServiceImpl(
             roster.team = team
 
             team.rosterList?.add(roster)
+        } ?: run {
+            throw IllegalArgumentException()
         }
     }
 
