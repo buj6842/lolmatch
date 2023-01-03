@@ -1,7 +1,7 @@
 package com.lolmatch.roster.dto
 
 data class RosterDetailDTO(
-    val rosterSeq: Long? = null,
+    val rosterSeq: Long,
     val rosterName: String? = null,
     val top: Long? = null,
     val jungle: Long? = null,
@@ -9,4 +9,4 @@ data class RosterDetailDTO(
     val ad: Long? = null,
     val support: Long? = null,
     val spare: Long? = null
-) {}
+)

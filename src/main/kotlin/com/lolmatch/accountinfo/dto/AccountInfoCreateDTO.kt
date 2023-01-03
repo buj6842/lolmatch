@@ -1,8 +1,11 @@
-package com.lolmatch.user.dto
+package com.lolmatch.accountinfo.dto
 
-import com.lolmatch.user.domain.AccountInfo
-import com.lolmatch.user.domain.LeagueInfo
+import com.lolmatch.accountinfo.domain.AccountInfo
+import com.lolmatch.leagueinfo.domain.LeagueInfo
 
+/**
+ * 계정 정보 생성 DTO
+ */
 data class AccountInfoCreateDTO(
     var riotUserKey: String? = null,
     var encryptAccountId: String? = null,
@@ -13,7 +16,6 @@ data class AccountInfoCreateDTO(
     var summonerLevel: Long? = null,
     var leagueInfo: LeagueInfo? = null
 ) {
-
     fun toEntity() : AccountInfo {
         return AccountInfo(riotUserKey, encryptAccountId, profileIconId, revisionDate, nickname, puuid, summonerLevel)
     }

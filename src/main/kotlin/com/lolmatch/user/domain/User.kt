@@ -1,5 +1,6 @@
 package com.lolmatch.user.domain
 
+import com.lolmatch.accountinfo.domain.AccountInfo
 import com.lolmatch.entity.BaseEntity
 import com.lolmatch.entity.type.PositionEnum
 import com.lolmatch.user.enums.UserRoleType

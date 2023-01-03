@@ -41,14 +41,14 @@ class Roster(
     @JoinColumn(name = "team_seq")
     var team: Team? = null
 
-    fun update (rosterUpdateDTO: RosterUpdateDTO) {
-        if(ObjectUtils.isEmpty(rosterUpdateDTO.rosterName)) rosterName = rosterUpdateDTO.rosterName
-        if(ObjectUtils.isEmpty(rosterUpdateDTO.top))        top = rosterUpdateDTO.top
-        if(ObjectUtils.isEmpty(rosterUpdateDTO.jungle))     jungle = rosterUpdateDTO.jungle
-        if(ObjectUtils.isEmpty(rosterUpdateDTO.mid))        mid = rosterUpdateDTO.mid
-        if(ObjectUtils.isEmpty(rosterUpdateDTO.ad))         ad = rosterUpdateDTO.ad
-        if(ObjectUtils.isEmpty(rosterUpdateDTO.support))    support = rosterUpdateDTO.support
-        if(ObjectUtils.isEmpty(rosterUpdateDTO.spare))      spare = rosterUpdateDTO.spare
+    fun update(rosterUpdateDTO: RosterUpdateDTO) {
+        if(!ObjectUtils.isEmpty(rosterUpdateDTO.rosterName)) rosterName = rosterUpdateDTO.rosterName
+        if(!ObjectUtils.isEmpty(rosterUpdateDTO.top))        top = rosterUpdateDTO.top
+        if(!ObjectUtils.isEmpty(rosterUpdateDTO.jungle))     jungle = rosterUpdateDTO.jungle
+        if(!ObjectUtils.isEmpty(rosterUpdateDTO.mid))        mid = rosterUpdateDTO.mid
+        if(!ObjectUtils.isEmpty(rosterUpdateDTO.ad))         ad = rosterUpdateDTO.ad
+        if(!ObjectUtils.isEmpty(rosterUpdateDTO.support))    support = rosterUpdateDTO.support
+        if(!ObjectUtils.isEmpty(rosterUpdateDTO.spare))      spare = rosterUpdateDTO.spare
     }
 
     fun delete() {

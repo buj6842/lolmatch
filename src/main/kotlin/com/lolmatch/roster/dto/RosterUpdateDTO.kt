@@ -12,4 +12,4 @@ data class RosterUpdateDTO(
     var ad: Long? = null,
     var support: Long? = null,
     var spare: Long? = null
-) {}
+)

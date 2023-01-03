@@ -16,11 +16,12 @@ class RosterServiceImpl(
     private val teamRepository: RosterRepository
 ): RosterService {
 
-    /* 로스터 생성 */
+    /* 생성 */
     @Transactional
     override fun createRoster(rosterCreateDTO: RosterCreateDTO) {
         rosterCreateDTO.teamSeq.let {
-            val team: Team = teamRepository.findById(it).orElseThrow()
+            val team: Team = Team()
+//            val team: Team = teamRepository.findById(it).orElseThrow()
 
             val roster: Roster = rosterRepository.save(rosterCreateDTO.toEntity())
             roster.team = team
@@ -31,7 +32,8 @@ class RosterServiceImpl(
         }
     }
 
-    /* 로스터 수정 */
+    /* 수정 */
+    @Transactional
     override fun updateRoster(rosterUpdateDTO: RosterUpdateDTO) {
         rosterUpdateDTO.rosterSeq.let {
             val roster: Roster = rosterRepository.findById(it).orElseThrow()
@@ -39,7 +41,8 @@ class RosterServiceImpl(
         }
     }
 
-    /* 로스터 상세 */
+    /* 상세 */
+    @Transactional
     override fun detailRoster(rosterSeq: Long): RosterDetailDTO {
         rosterSeq.let {
             val roster: Roster = rosterRepository.findById(it).orElseThrow()
@@ -56,7 +59,8 @@ class RosterServiceImpl(
         }
     }
 
-    /* 로스터 삭제 */
+    /* 삭제 */
+    @Transactional
     override fun deleteRoster(rosterSeq: Long) {
         rosterSeq.let {
             val roster: Roster = rosterRepository.findById(it).orElseThrow()

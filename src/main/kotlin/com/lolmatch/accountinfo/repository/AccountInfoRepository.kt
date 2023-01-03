@@ -1,6 +1,6 @@
-package com.lolmatch.user.repository
+package com.lolmatch.accountinfo.repository
 
-import com.lolmatch.user.domain.AccountInfo
+import com.lolmatch.accountinfo.domain.AccountInfo
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface AccountInfoRepository: JpaRepository<AccountInfo, Long> {
