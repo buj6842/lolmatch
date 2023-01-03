@@ -24,7 +24,7 @@ class User (
     @Column
     var preferPosition2: PositionEnum? = null,
 
-    var accountId : String? = null ,
+    var accountId : String? = null,
 ) : BaseEntity() {
     @Id
     @Column(name = "user_seq")

@@ -3,7 +3,6 @@ package com.lolmatch.user.service
 import com.lolmatch.user.domain.User
 import com.lolmatch.user.dto.LoginRequest
 import com.lolmatch.user.dto.UserCreateDTO
-import java.util.*
 
 interface UserService {
 
