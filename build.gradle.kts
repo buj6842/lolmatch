@@ -55,6 +55,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.projectreactor:reactor-spring:1.0.1.RELEASE")
 
+    // Redis
+    implementation("org.springframework.boot:spring-boot-starter-data-redis")
+
     sourceSets.main {
         withConvention(org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet::class) {
             kotlin.srcDir("$buildDir/generated/source/kapt/main")

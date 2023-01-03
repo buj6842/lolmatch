@@ -18,6 +18,11 @@ spring:
       fail-on-empty-beans: false
   profiles:
     active: prd
+  redis:
+#    host: redis
+    host: 3.36.25.204
+    port: 7000
+    timeout: 3000
 
 jwt:
   secretKey: "aaaaaaaaaaaaaaaaa"
