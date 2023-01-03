@@ -1,18 +1,26 @@
 package com.lolmatch.roster.service
 
-import com.lolmatch.roster.dto.Roster
+import com.lolmatch.roster.domain.Roster
 import com.lolmatch.roster.dto.RosterCreateDTO
 import com.lolmatch.roster.dto.RosterDetailDTO
 import com.lolmatch.roster.dto.RosterUpdateDTO
 import com.lolmatch.roster.repository.RosterRepository
+import com.lolmatch.team.domain.Team
+import org.springframework.transaction.annotation.Transactional
 
 class RosterServiceImpl(
-    private val rosterRepository: RosterRepository
+    private val rosterRepository: RosterRepository,
+    private val teamRepository: RosterRepository
 ): RosterService {
 
     /* 로스터 생성 */
+    @Transactional
     override fun createRoster(rosterCreateDTO: RosterCreateDTO) {
-        rosterRepository.save(rosterCreateDTO.toEntity())
+        rosterCreateDTO.teamSeq.let {
+            val team: Team = teamRepository.findById(it).orElseThrow()
+            val roster: Roster = rosterRepository.save(rosterCreateDTO.toEntity())
+            team.rosterList?.add(roster)
+        }
     }
 
     /* 로스터 수정 */
@@ -24,7 +32,7 @@ class RosterServiceImpl(
     }
 
     /* 로스터 상세 */
-    override fun detailRoster(rosterSeq: Long): RosterDetailDTO {
+    override fun detailRoster(rosterSeq: Long): RosterDetailDTO? {
         rosterSeq.let {
             val roster: Roster = rosterRepository.findById(it).orElseThrow()
             return RosterDetailDTO(
@@ -44,6 +52,7 @@ class RosterServiceImpl(
     override fun deleteRoster(rosterSeq: Long) {
         rosterSeq.let {
             val roster: Roster = rosterRepository.findById(it).orElseThrow()
+            roster.delete()
         }
     }
 }

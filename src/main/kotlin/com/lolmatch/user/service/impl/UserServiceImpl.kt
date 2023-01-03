@@ -13,14 +13,10 @@ import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.crypto.bcrypt.BCrypt
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import java.lang.Exception
-import java.security.PrivateKey
-import java.util.Optional
-import kotlin.jvm.Throws
 
 @Service
 class UserServiceImpl (
-    private val userRepository: UserRepository,
+    private val userRepository: UserRepository,         
     private val jwtProvider: JwtProvider
     ) : UserService {
 
