@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>W+CK 회원가입</title>
+	<style type="text/css">body{-webkit-text-size-adjust: none; margin: 0; padding: 0;  width: 100%; height: 100%; position: relative; background: #F1F1F1;} #wrap{width: 100%} #header.join_membweship{padding-bottom: 20px; } #header{position: relative; overflow: hidden; padding: 60px  0 54px; box-sizing: border-box;} #container, #footer, #header{margin: 0 auto; max-width: 768px; min-width: 370px;} h1{margin: 0; padding: 0; -webkit-text-size-adjust: none;} #header .w_logo{display: block; margin: 0 auto; height: 44px;} a{text-decoration: none; cursor: pointer;} #content{width: 370px; margin: 0 auto;} .blind{position: absolute; overflow: hidden; clip: rect(0, 0, 0, 0); margin: -1px; width: 1px; height: 1px;} .ipin_box, .row_group{overflow: hidden; width: 100%;} 
+		.join_title{margin: 19px 0 8px; font-size: 14px; font-weight: 700;} label{cursor: pointer;} .ps_box.int_id, .ps_box.int_id input{background: #ffffff; outline: 0;} .ps_box, .ps_box_disable{display: block; position: relative; width: 100%; height: 56px; border: solid 1px #c8c8c8; padding: 12px 110px 12px 14px; box-sizing: border-box; border-radius: 5px;background: #ffffff;} .ps_box:hover {border: solid 1px #FF8600; transition: all 0.5s;} .int{display: block; position: relative; width: 100%; height: 30px; padding-right: 25px; line-height: 29px; border: none; font-size: 15px; box-sizing: border-box; z-index: 10;} button, input, select, textarea{border-radius: 0; appearance: none; outline: 0; text-decoration: none; cursor: pointer; -webkit-text-size-adjust: none;} .error_next_box{display: block; margin: 9px 0 -2px; font-size: 12px; line-height: 14px; color: red;} .email_wrap{display: table; width: 100%;} .email_id{display: table-cell; table-layout: fixed; width: 224px; vertical-align: middle;}</style>
+</head>
+<body>
+	<div id="wrap">
+		<!--스킵네비게이션 : 웹접근성대응
+		<div id="u_skip" style="position: relative;"></div>-->
+		<!--header-->	
+		<div id="header" class="join_membership" role="banner">
+			<h1>
+				<a class="W_logo" href="http;// 블라블라">
+					<img src="logo1.png" style=" height: 44px; display: block; margin: 0px auto;">
+				</a>
+			</h1>	
+		</div>
+		<!--//header-->
+		<!--container-->
+		<div id="container" role="main">
+			<div id="content">
+				<!--tg-text=title-->
+				<h2 class="blind">W+CK회원가입</h2>
+				<div class="join_content">
+					<!--아이디, 비밀번호 입력-->
+					<div class="row_group">
+						<div class="join_row">
+							<h3 class="join_title">
+								<label for="id">아이디</label>
+							</h3>
+							<span class="ps_box int_id">
+								<input id="id" class="int" type="text" name="id" title="ID" maxlength="20">
+							</span>
+							<span class="error_next_box" id="idMsg" style="display:none" aria-live="assertive">필수 정보입니다.</span>
+						</div>
+						<div class="join_row">
+							<h3 class="join_title">
+								<label for="pswd1">비밀번호</label>
+							</h3>
+							<span id="pswd1Img" class="ps_box int_pass">
+								<input id="pswd1" class="int" type="password" name="pswd1" title="비밀번호 입력" aria-describedby="pswd1Msg" maxlength="20">
+							</span>
+							<!--<span class="error_next_box" id="pswd1Msg" style="display: block;" aria-live="assertive">8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.</span> 입력시 오류 창인데 어케 일단 넣어둠-->
+							<h3 class="join_title">
+								<label for="pswd2">비밀번호 재확인</label>
+							</h3>
+							<span id="pswd2Img" class="ps_box int_pass_check">
+								<input id="pswd2" class="int" type="password" name="pswd2" title="비밀번호 재확인 입력" aria-describedby="pswd2Blind" maxlength="20">
+							</span>
+							<!--<span class="error_next_box" id="pswd2Msg" style="" aria-live="assertive">필수 정보입니다.</span> 입력시 오류 창인데 어케 일단 넣어둠-->
+						</div>
+					<!--//아이디, 비밀번호 입력-->
+					<!--이름, 생년월일 입력-->
+					<div class="row_group" style="margin-top: 20px;">
+						<!--lang = ko_KR-->
+						<div class="join_row">
+							<h3 class="join_title">
+								<label for="email">본인 확인 이메일</label>
+							</h3>
+							<div class="email_wrap">
+								<div class="email_id">
+									<span class="ps_box">
+										<input id="em_id" class="int" type="text" placeholder="아이디 입력" aria-label="아이디 입력" maxlength="20">
+									</span>
+								</div>
+								<div class="email_domain">
+									<span class="ps_box">
+										<select id="domain" class="sel" aria-label="@naver.com">
+											<option value="">@naver.com</option>
+											<option value="@naver.com">@naver.com</option>
+											<option value="@gmail.com">@gmail.com</option>
+											<option value="@daum.net">@daum.net</option>
+											<option value="@naver.com">@naver.com</option>
+											<option value="@naver.com">@naver.com</option>
+											<option value="@naver.com">@naver.com</option>
+										</select>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//이름, 생년월일 입력-->
+					<!--휴대전화 번호, 인증번호 입력-->
+					<div></div>
+					<!--//휴대전화 번호, 인증번호 입력-->
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
