@@ -1,0 +1,60 @@
+.logo1{
+   height: 30px; 
+   display: block; 
+   margin: 0px auto; }
+#header{
+   position: relative;
+   overflow: hidden;
+   padding: 108px  0 60px;
+   box-sizing: border-box;}
+button, input, select, textarea {
+   border-radius: 0;
+   border: none;
+   background: 0 0;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   outline: 0;
+   text-decoration: none;
+   cursor: pointer;
+   -webkit-text-size-adjust: none;
+    }
+#content{
+   width: 370px; 
+   margin: 0 auto;}
+.id_pw_wrap .input_row:first-child {
+   border-radius: 5px 5px 0 0;
+   box-shadow: none;}
+.id_pw_wrap .input_row:last-child {
+   border-radius: 0 0 5px 5px;}
+.id_pw_wrap .input_row {
+   display: table;
+   table-layout: fixed;
+   width: 100%;
+   padding: 17px 14px 16px;
+   box-sizing: border-box;}
+.input_row {
+   position: relative;
+   height: 100%;
+   border: 1px solid #dadada;
+   text-align: left;
+   box-shadow: 0 2px 6px 0 rgba(68,68,68,.08);}
+.input_row + .input_row {
+   margin-top: -1px;}
+.input_row:hover {
+   border: solid 1px #FF8600; 
+   transition: all 0.5s;}
+.input_row.focus{
+   border: solid 1px #FF8600;
+   z-index: 5;}
+.input_text {
+   position: relative;
+   display: block;
+   width: 100%;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 19px;
+   letter-spacing: -.5px;
+   color: #222;
+   box-sizing: border-box;
+   z-index: 4;}
