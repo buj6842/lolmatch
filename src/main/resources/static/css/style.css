@@ -1,0 +1,26 @@
+
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;}
+body{
+    font-family: 'NanumSquareNeo-Variable';
+    -webkit-text-size-adjust: none; 
+    margin: 0; 
+    padding: 0;  
+    width: 100%; 
+    height: 100%; 
+    position: relative; 
+    font-size: 14px;}
+#wrap{
+    width: 100%}
+/* 로그인 회원가입 컨테이너 해더 공통 */
+#container, #footer, #header{
+    margin: 0 auto; 
+    max-width: 768px; 
+    min-width: 370px;}
+#content{
+    width: 370px; 
+    margin: 0 auto;}
+/* 로그인 회원가입 컨테이너 해더 공통 */
