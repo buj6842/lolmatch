@@ -89,7 +89,7 @@ button, select, textarea {
 }
 .btn_login{
    color: #fff; 
-   background-color: #FF8600;
+   background-color: #C8C8C8;
    border-radius: 5px;;
    display: block; 
    width: 100%;
@@ -100,6 +100,11 @@ button, select, textarea {
    cursor: pointer;
    box-sizing: border-box; 
    border: none;}
+.btn_login :hover{
+   background-color:#FF8600;
+   color: #fff;
+   transition: all 1s;
+}
 .join_btn_wrap{
    text-align: center;
    padding-top: 20px;
