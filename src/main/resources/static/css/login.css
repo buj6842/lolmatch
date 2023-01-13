@@ -49,9 +49,7 @@ button, select, textarea {
    border: solid 1px #FF8600;
    z-index: 5;}
 .input_text {
-   display: table-cell;
    position: relative;
-   display: block;
    border: none;
    width: 100%;
    font-size: 16px;
@@ -60,7 +58,8 @@ button, select, textarea {
    letter-spacing: -.5px;
    color: #222;
    box-sizing: border-box;
-   z-index: 4;}
+   z-index: 4;
+   outline: 0;}
 .login_keep_wrap {
    position: relative;
    margin-top: 16px;}
