@@ -5,9 +5,9 @@
 #header{
    position: relative;
    overflow: hidden;
-   padding: 108px  0 60px;
+   padding: 90px  0 60px;
    box-sizing: border-box;}
-button, input, select, textarea {
+button, select, textarea {
    border-radius: 0;
    border: none;
    background: 0 0;
@@ -19,6 +19,7 @@ button, input, select, textarea {
    cursor: pointer;
    -webkit-text-size-adjust: none;
     }
+.container{width: 370px;}
 #content{
    width: 370px; 
    margin: 0 auto;}
@@ -48,8 +49,10 @@ button, input, select, textarea {
    border: solid 1px #FF8600;
    z-index: 5;}
 .input_text {
+   display: table-cell;
    position: relative;
    display: block;
+   border: none;
    width: 100%;
    font-size: 16px;
    font-weight: 400;
@@ -58,3 +61,58 @@ button, input, select, textarea {
    color: #222;
    box-sizing: border-box;
    z-index: 4;}
+.login_keep_wrap {
+   position: relative;
+   margin-top: 16px;}
+.keep_check {
+   position: relative;
+   padding-left: 34px;}
+.keep_check .input_keep {
+   position: absolute;
+   top: 2px;
+   left: -3px;
+   width: 24px;
+   height: 24px;}
+.keep_check .keep_text {
+   display: inline-block;
+   font-size: 14px;
+   font-weight: 500;
+   line-height: 34px;
+   padding-right: 147px;}
+.pw_find {
+   display: inline-block;
+   font-size: 14px;
+   font-weight: 700;
+   line-height: 34px;
+   color: #FF8600;}
+.btn_login_wrap{
+   padding-top: 24px
+}
+.btn_login{
+   color: #fff; 
+   background-color: #FF8600;
+   border-radius: 5px;;
+   display: block; 
+   width: 100%;
+   padding: 18px 0 15px;
+   font-size: 18px;
+   font-weight: 700;
+   text-align: center;
+   cursor: pointer;
+   box-sizing: border-box; 
+   border: none;}
+.join_btn_wrap{
+   text-align: center;
+   padding-top: 20px;
+   padding-bottom: 45px;;
+   width: 100%;}
+.join_text{
+   padding-right: 24px;}
+.join_btn{
+   font-weight: 700;
+   color: #FF8600;
+   }
+.logo2{height: 17px;
+   margin: auto;
+   padding-top: 30px;
+   padding-bottom: 70px;}

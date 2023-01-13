@@ -3,14 +3,11 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>WCK 로그인</title>
-    <style>
-        body{}</style>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='/Users/oljeon/Desktop/WCK/lolmatch/src/main/resources/static/css/style.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='/Users/oljeon/Desktop/WCK/lolmatch/src/main/resources/static/css/login.css'>
     <script src='main.js'></script>
-   
+    <title>WCK 로그인</title>
 </head>
 <body>
     <!--header-->	
@@ -22,8 +19,8 @@
         </h1>	
     </div>
     <!--//header-->
+    <!--content-->
     <div id="container" class="container">
-        <!--content-->
         <div id="content" class="content">
             <div class="row_group">
                 <!--아이디 패스워드 입력-->
@@ -36,9 +33,42 @@
                     </div>
                 </div>
                 <!--//아이디 패스워드 입력-->
-            </div>    
+                <!--로그인 상태유지, 비밀번호 찾기-->
+                <div class="login_keep_wrap" id="login_keep_wrap">
+                    <div class="keep_check">
+                        <input type="checkbox" id="keep" name="nvlong" class="input_keep" value="off">
+                        <label for="keep" class="keep_text">로그인 상태 유지</label>
+                        <a target="pw_find" href="비번 찾는 링크" class="pw_find">비밀번호 찾기</a>
+                    </div>
+                </div>
+                <!--//로그인 상태유지, 비밀번호 찾기-->
+                <!--로그인 버튼-->
+                <div class="btn_login_wrap">
+                    <button type="submit" class="btn_login" id="log.login">
+                        <span class="btn_text">로그인</span>
+                    </button>
+                </div>
+                <!--//로그인 버튼-->
+                <!--회원가입-->
+                <div class="join_btn_wrap">
+                    <label for="keep" class="join_text">회원이 아니신가요?</label>
+                    <a target="join_btn" href="회원가입 링크" class="join_btn">회원가입</a>
+                </div>
+                <!--//회원가입-->
+            </div>   
         </div>
-        <!--//content-->
+        <!--광고 배너 공간-->
+        <div id="gladbanner" class="banner_wrap"><div style="width: 100%; height: auto; margin: 0px auto;">
+            <iframe id="gladbanner_tgtLREC"
+            style="width: 100%; height: 150px; visibility: inherit; display: block; border: 0px none; vertical-align: bottom; background: gray;"
+            scrolling="no" tabindex="0" name="" title="AD" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+            src="https://ssl.pstatic.net/tveta/libs/glad/prod/2.9.1/res/r.html" frameborder="no"></iframe>
+        </div>
+        <!--//광고 배너 공간-->
+        <a class="W_logo" href="http;// 블라블라">
+            <img src="logo1.png" class="logo2">
+        </a>
     </div>
+    <!--//content-->
 </body>
 </html>
