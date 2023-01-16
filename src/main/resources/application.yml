@@ -18,6 +18,9 @@ spring:
       fail-on-empty-beans: false
   profiles:
     active: local
+  thymeleaf:
+    cache: true
+    suffix: .html
 
 jwt:
   secretKey: lolMatchSecretKeyasdfasdfsadfwerasdqwesadfasdfsadfcxzvaasdf
