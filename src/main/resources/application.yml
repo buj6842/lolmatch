@@ -21,6 +21,7 @@ spring:
   thymeleaf:
     cache: true
     suffix: .html
+    prefix: classpath:/templates
 
 jwt:
   secretKey: lolMatchSecretKeyasdfasdfsadfwerasdqwesadfasdfsadfcxzvaasdf
