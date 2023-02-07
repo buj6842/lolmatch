@@ -20,7 +20,8 @@ spring:
     active: local
   redis:
 #    host: redis
-    host: 3.36.25.204
+#    host: 3.36.25.204
+    host: 43.200.158.192
     port: 7000
     timeout: 3000
 
