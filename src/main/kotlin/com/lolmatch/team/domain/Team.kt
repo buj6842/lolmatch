@@ -1,6 +1,7 @@
 package com.lolmatch.team.domain
 
 import com.lolmatch.entity.BaseEntity
+import com.lolmatch.roster.domain.Roster
 import org.hibernate.annotations.DynamicUpdate
 import javax.persistence.*
 
@@ -20,6 +21,10 @@ class Team(
     @OneToMany(mappedBy = "team", cascade = [CascadeType.ALL])
     val memberList: List<Member>? = mutableListOf()
 
+    @OneToMany(mappedBy = "team", cascade = [CascadeType.ALL])
+    val rosterList: MutableList<Roster>? = mutableListOf()
 
-
+    fun addRoster(roster: Roster) {
+        rosterList?.add(roster)
+    }
 }
