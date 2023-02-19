@@ -1,5 +1,5 @@
 #!/bin/bash
-BUILD_JAR=$(ls /home/lolmatch/build/build/libs/*.jar)
+BUILD_JAR=$(ls /home/lolmatch/build/build/libs/lolmatch-0.0.1-SNAPSHOT.jar)
 JAR_NAME=$(basename $BUILD_JAR)
 echo "> build 파일명: $JAR_NAME" >> /home/lolmatch/logs/deploy.log
 
@@ -21,4 +21,4 @@ fi
 
 DEPLOY_JAR=$DEPLOY_PATH$JAR_NAME
 echo "> DEPLOY_JAR 배포"    >> /home/lolmatch/logs/deploy.log
-nohup java -Dspring.profiles.active=prod -jar $DEPLOY_JAR >> /home/lolmatch/logs/deploy.log 2>/home/lolmatch/logs/deploy_err.log &
+nohup java -Dspring.profiles.active=prod -jar $DEPLOY_JAR >> /apps/lolmatch/logs/deploy.log 2>/apps/lolmatch/logs/deploy_err.log &
