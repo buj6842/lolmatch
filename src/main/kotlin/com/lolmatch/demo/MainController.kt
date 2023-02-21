@@ -14,7 +14,7 @@ class MainController {
     @GetMapping("/test")
     fun mainView(model : Model): String {
         return buildString {
-            append("/first/main")
+            append("/join/join")
         }
     }
 
