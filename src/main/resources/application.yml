@@ -26,7 +26,7 @@ spring:
 #    host: redis
 #    host: 3.36.25.204
     host: 43.200.158.192
-    port: 7000
+    port: 7001
     timeout: 3000
 
 jwt:
