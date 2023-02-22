@@ -2,6 +2,7 @@ package com.lolmatch.team.domain
 
 import com.lolmatch.entity.BaseEntity
 import com.lolmatch.roster.domain.Roster
+import com.lolmatch.team.dto.TeamUpdateDTO
 import org.hibernate.annotations.DynamicUpdate
 import javax.persistence.*
 
@@ -26,5 +27,13 @@ class Team(
 
     fun addRoster(roster: Roster) {
         rosterList?.add(roster)
+    }
+
+    fun update (teamUpdateDTO: TeamUpdateDTO) {
+        teamName = teamUpdateDTO.teamName
+    }
+
+    fun delete () {
+        delYn = true
     }
 }
