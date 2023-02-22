@@ -101,5 +101,5 @@ const fetchGetCallAsync = (url) => {
     fetch(url)
         .then(res => {return res.json();})
         .then(data => console.log(data))
-        .catch(err => { alert(err); })
+        .catch(err => alert(err))
 }
