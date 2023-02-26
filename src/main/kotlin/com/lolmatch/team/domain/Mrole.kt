@@ -1,6 +1,5 @@
 package com.lolmatch.team.domain
 
-import com.lolmatch.entity.BaseEntity
 import com.lolmatch.team.enums.MemberRoleType
 import org.hibernate.annotations.DynamicUpdate
 import javax.persistence.*
@@ -8,7 +7,7 @@ import javax.persistence.*
 @DynamicUpdate
 @Entity
 @Table(name = "tbl_mrole")
-class Mrole : BaseEntity() {
+class Mrole {
     @Id
     @Column(name = "m_role_seq")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
