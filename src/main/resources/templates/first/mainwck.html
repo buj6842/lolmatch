@@ -2,38 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/css/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/../css/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/../main.css'>
+
+    <style>
+        @font-face {
+            font-family: 'NanumSquareNeo-Variable';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;}
+        body{font-family: 'NanumSquareNeo-Variable';
+            -webkit-text-size-adjust: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            font-size: 14px;}
+        li{display: inline-block; padding: 30px; text-align: center;}
+        a{text-decoration: none; color: #8C8C8C; font-weight: 700; font-size: 18px;}
+        .home{padding-bottom: 35px; align: center; border-bottom: solid 4px #FF8600; width: 90px; box-sizing: border-box;}
+        .profile{position: absolute; width: 100%;}
+    </style>
     <title>WCK 홈</title>
 </head>
-<body>
-    <div class="f_line">
+<body style="margin: 0; background: #F1F1F1;">
+    <div class="f_line" style="width: 100%; height: 60px; background: #252525;">
+        <div>
+            <span>한국어</span>
 
+        </div>
+        <div>
+            <span>로그인</span>
+        </div>
     </div>
-    <div class="s_line">
-        <a class="logo">
-            <img src="logo1.png">
+    <div class="s_line" style="width: 100%; height: 100px;background: white; position: relative;">
+        <a class="logo" href="homelink" style="position: absolute; left: 40px; top: 38px;">
+            <img src="logo1.png" style="height: 25px;">
         </a>
         <nav>
-            <ul>
-                <li>
-                    <span>홈</span>
-
+            <ul style="position: absolute; margin: 0; width: 100%; left: 392px; top: 11px;">
+                <li class="home">
+                    <a href="homelink" style="color: #FF8600;">
+                        <span>홈</span>
+                    </a>
                 </li>
-                <li>
-                    <span>게임 매칭</span>
-
+                <li class="maching">
+                    <a href="homelink">
+                        <span>게임 매칭</span>
+                    </a>
                 </li>
-                <li>
-                    <span>팀 관리</span>
-
+                <li class="team">
+                    <a href="homelink">
+                        <span>팀 관리</span>
+                    </a>
                 </li>
-                <li>
-                    <span>커뮤니티</span>
-
+                <li class="commu">
+                    <a href="homelink">
+                        <span>커뮤니티</span>
+                    </a>
                 </li>
             </ul>
         </nav>
+        <div class="profile">
+            <img src="PIcon2.png" style="width: 60px; position: absolute; top: 17px; left: 1333px;">
+            <span style="position: absolute; left: 1404px; top: 36px;">황제카GANG</span>
+            <span style="position: absolute; left: 1404px; top: 55px;">silver 1</span>
+        </div>
     </div>
 </body>
 </html>
