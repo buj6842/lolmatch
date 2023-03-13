@@ -1,14 +1,133 @@
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;}
 body{
+    font-family: 'NanumSquareNeo-Variable';
+    -webkit-text-size-adjust: none;
     margin: 0;
-    background: F1F1F1;}
-.f_line{
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-size: 14px;
+    background: #F1F1F1;}
+#frame{
+    width: 100%;}
+#line1{
     width: 100%;
     height: 60px;
-    background: #252525;}
-.s_line{
+    background: #252525;
+    position: relative;
+    color: #ffffff;}
+#menu1{
+    position: absolute;
+    display: block;
+    width: 171px;
+    height: 35px;
+    right: 0px;
+    padding: 12px 40px;  }
+.lan_box{
+    display: table-cell;
+    font-size: 12px;
+    padding-right: 20px;}
+#lan_sel{
+    color: #ffffff;
+    background: #252525;
+    border: none;
+    width: 58px;}
+.h_line {
+    display: table-cell;
+    border-left : 1px solid #ffffff;
+    height : 25px;
+    padding-right: 24px;}
+.logout{
+    background: #FF8600;
+    display: table-cell;
+    width: 68px;
+    height: 35px;
+    font-size: 12px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 25px;}
+#line2{
     width: 100%;
     height: 100px;
-    background: white;}
-.logo{
+    background: #ffffff;
+    position: relative;}
+.logo1{
     height: 25px;
-    }
+    position: absolute;
+    padding: 38px 40px;}
+.menu2{
+    padding: 11px 400px 10px;
+    width: 100%;
+    position: absolute;}
+ul{
+    padding: 0px;
+    margin: 0;
+}
+#menu_box{
+    display: inline-block;
+    text-align: center;
+}
+li{
+    display: inline-block;}
+a{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 800;
+    color: #8C8C8C;
+    padding: 20px 0px;}
+.u_bar{
+    width: 90px;
+    border-bottom: 4px solid #FF8600;
+    box-sizing: border-box;
+    padding-top: 34px;}
+.u_bar_off{
+    width: 90px;
+    border-bottom: 4px solid #ffffff;
+    box-sizing: border-box;
+    padding-top: 34px;}
+.home_box{
+    padding: 30px 8px 0px 0px;}
+.maching_box{
+    padding: 30px 17px 0px 8px;}
+.team_box{
+    padding: 30px 17px 0px 17px;}
+.commu_box{
+    padding: 30px 17px 0px 17px;}
+#profile_box{
+    position: absolute;
+    display: flex;
+    align-items: center ;
+    width: auto;
+    height: 66px;
+    right: 23px;
+    padding: 17px;}
+.icon{
+    width: 60px;
+    height: 66px;
+    padding-right: 10px;}
+.nick_box{
+    padding: 0 20px 0 0;}
+.nick{
+    font-weight: 800;}
+.tier{
+    font-size: 12px;
+    color: #8C8C8C;
+}
+.h_bar{
+    border-left : 1.5px solid #FFE7CC;
+    height: 60px;
+    box-sizing: border-box;
+    padding-right: 20px;}
+.search{
+    background: #FFE7CC;
+    width: 136px;
+    height: 42px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 25px;}
